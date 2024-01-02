@@ -1,0 +1,8 @@
+require('settings')
+require('plugins')
+require('colorscheme')
+require('keymap')
+require('statusbar')
+require('mylsp')
+require('hightlight')
+require('autoComplete')

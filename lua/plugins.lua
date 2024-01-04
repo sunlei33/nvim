@@ -12,12 +12,18 @@ return require('packer').startup(function(use)
 
   -- Find
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   -- Hightlight
-  use 'nvim-treesitter/nvim-treesitter'
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = function()
+          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+          ts_update()
+      end,
+  }
 
   -- StatusBar
   use {
